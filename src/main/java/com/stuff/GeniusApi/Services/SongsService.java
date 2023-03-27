@@ -12,6 +12,7 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Component
 public class SongsService {
@@ -19,7 +20,7 @@ public class SongsService {
 
     private RestTemplate restTemplate = new RestTemplate();
 
-    public ArrayList getHitSongs(String name) {
+    public List<Song> getHitSongs(String name) {
         ArrayList<Song> songList = new ArrayList<Song>();
 
         HttpHeaders httpHeaders = new HttpHeaders();
