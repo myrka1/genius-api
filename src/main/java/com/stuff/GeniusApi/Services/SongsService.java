@@ -20,14 +20,21 @@ public class SongsService {
 
     private RestTemplate restTemplate = new RestTemplate();
 
-    public List<Song> getHitSongs(String name) {
-        ArrayList<Song> songList = new ArrayList<Song>();
+    public List<Song> getHitSongs(String artist_name) {
+        //postman: localhost:8080/songs?artistName=
+        System.out.println("Artist name input: " + artist_name);
 
+        ArrayList<Song> songList = new ArrayList<Song>();
+        Song song1 = new Song("Blank Space", "Taylor Swift");
+        Song song2 = new Song("Style", "Taylor Swift");
+        songList.add(song1);
+        songList.add(song2);
+        /*
         HttpHeaders httpHeaders = new HttpHeaders();
         //httpHeaders.setBearerAuth(token here);
         HttpEntity<String> request = new HttpEntity<>(httpHeaders);
 
-        String url = "api.genius.com/search?q=" + name;
+        String url = "api.genius.com/search?q=" + artist_name;
         //example: api.genius.com/search?q=Taylor%20Swift
         ResponseEntity<String> response = restTemplate.exchange(
                 url,
@@ -52,6 +59,7 @@ public class SongsService {
             throw new RuntimeException(e);
         }
 
+         */
 
         return songList;
     }
