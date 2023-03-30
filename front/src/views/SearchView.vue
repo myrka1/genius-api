@@ -11,19 +11,35 @@
     </div>
 </template>
   
+
 <script>
+  import service from '../services/BackendService.js';
+
+
   export default {
     data() {
       return {
         artist: "",
+        stuff: [],
       };
     },
     methods: {
       submitForm() {
-        console.log("Artist: ", this.artist)
-      },
+        try {
+          service.hitSongs(this.artist).then((response) => {
+            this.stuff = response.data;
+            this.artist = "";
+            console.log("Stuff: ", response);
+          }); 
+        }
+        catch (error) {
+          //console.error(error);
+          //console.log("Artist: ", this.artist)
+        }
+      }
     },
-  };
+  }
+
 
 </script>
   

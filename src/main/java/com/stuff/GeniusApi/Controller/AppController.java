@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin
 @RestController
 public class AppController {
     @Autowired
@@ -14,7 +15,7 @@ public class AppController {
 
     //postman: localhost:8080/songs?artistName=
     @RequestMapping(path="/songs", method= RequestMethod.GET)
-    public List<Song> getATweet(@RequestParam String artistName) {
+    public List<Song> getHitSongs(@RequestParam String artistName) {
         return songsService.getHitSongs(artistName);
     }
     
