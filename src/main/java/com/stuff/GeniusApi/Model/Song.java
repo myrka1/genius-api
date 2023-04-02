@@ -6,10 +6,15 @@ public class Song {
     private String dateReleased;
     private String imageURL;
     private String artistId;
+    private String songId;
 
-    public Song(String songTitle, String artistName) {
+    public Song(String songTitle, String artistName, String dateReleased, String imageURL, String artistId, String songId) {
         this.songTitle = songTitle;
         this.artistName = artistName;
+        this.dateReleased = dateReleased;
+        this.imageURL = imageURL;
+        this.artistId = artistId;
+        this.songId = songId;
     }
     public String getArtistId() {
         return artistId;
@@ -51,6 +56,14 @@ public class Song {
         this.songTitle = songTitle;
     }
 
+    public String getSongId() {
+        return songId;
+    }
+
+    public void setSongId(String songId) {
+        this.songId = songId;
+    }
+
     @Override
     public String toString() {
         return "Song{" +
@@ -59,6 +72,7 @@ public class Song {
                 ", dateReleased='" + dateReleased + '\'' +
                 ", imageURL='" + imageURL + '\'' +
                 ", artistId='" + artistId + '\'' +
+                ", songId='" + songId + '\'' +
                 '}';
     }
 }
