@@ -24,22 +24,9 @@ public class SongsService {
     private RestTemplate restTemplate = new RestTemplate();
 
     public List<Song> getHitSongs(String artist_name) {
-        //postman: localhost:8080/songs?artistName=
         System.out.println("Artist name input: " + artist_name);
 
         ArrayList<Song> songList = new ArrayList<Song>();
-        /*Song song1 = new Song("Blank Space",
-                "Taylor Swift",
-                "January 2014",
-                "https://images.genius.com/9dd4ba749dd51d39d7b56b67b9cc3777.1000x1000x1.jpg",
-                "123");
-        Song song2 = new Song("Style",
-                "Taylor Swift",
-                "March 2013",
-                "hello2.com",
-                "456");
-        songList.add(song1);
-        songList.add(song2); */
 
         HttpHeaders httpHeaders = new HttpHeaders();
         httpHeaders.setBearerAuth(this.token);
@@ -61,12 +48,12 @@ public class SongsService {
             JsonNode hits = jsonNode.path("response").path("hits");
 
             for(JsonNode current : hits) {
-                String songName = current.path("full_title").asText();
-                String artistName = current.path("primary_artist").path("name").asText();
-                String dateReleased = current.path("release_date_for_display").asText();
-                String imageURL = current.path("song_art_image_url").asText();
-                String artistId = current.path("primary_artist").path("id").asText();
-                String songId = current.path("id").asText();
+                String songName = current.path("result").path("full_title").asText();
+                String artistName = current.path("result").path("primary_artist").path("name").asText();
+                String dateReleased = current.path("result").path("release_date_for_display").asText();
+                String imageURL = current.path("result").path("song_art_image_url").asText();
+                String artistId = current.path("result").path("primary_artist").path("id").asText();
+                String songId = current.path("result").path("id").asText();
                 song = new Song(songName, artistName, dateReleased, imageURL, artistId, songId);
                 songList.add(song);
             }
