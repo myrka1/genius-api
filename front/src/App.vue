@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/search">Search Page</router-link> |
+      <router-link to="/">Home</router-link> 
+      <router-link to="/search">Search Page</router-link> 
       <router-link to="/about">About</router-link> 
     </nav>
     <router-view/>
@@ -20,7 +20,7 @@ export default {
   #FF7B54    //bright orange salmon
   #FFB26B    //light orange salmon
   #FFD56B    //dead yellow
-  #939B62    //sage green
+  #676c4b    //sage green
 -->
 
 <style>
@@ -31,7 +31,7 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #939B62;
+  color: #676c4b;
 }
 
 body {
@@ -41,11 +41,19 @@ body {
 
 nav {
   padding: 30px;
+  display: flex;
+  justify-content: center;
 }
 
 nav a {
   font-weight: bold;
   color: #FFD56B;
+  font-size: 22px;
+  border: 1px solid #676c4b;
+  flex-basis: 20%;
+  margin: 5px;
+  border-radius: 5px;
+  text-decoration: none;
 }
 
 nav a.router-link-exact-active {
