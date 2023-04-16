@@ -1,5 +1,9 @@
 <template>
   <div id="app">
+    <div class="footer">
+      <p>An emwaiarkayeii production.</p>
+
+    </div>
     <nav>
       <router-link to="/">Home</router-link> 
       <router-link to="/search">Search Page</router-link> 
@@ -58,5 +62,15 @@ nav a {
 
 nav a.router-link-exact-active {
   color: #FF7B54;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 10px;
 }
 </style>
