@@ -6,6 +6,7 @@ const http = axios.create({
 
 export default {
     hitSongs(artist) {
-        return http.get(`/songs?artistName=${artist}`);
+        const encodedArtist = encodeURIComponent(artist);
+        return http.get(`/songs?artistName=${encodedArtist}`);
     },
 }
