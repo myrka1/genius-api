@@ -4,7 +4,7 @@
       This program connects to the Genius API.
       <br>
       Learn more about the Genius API 
-      <a href="https://docs.genius.com/">here</a>.
+      <a href="https://docs.genius.com/" target="_blank">here</a>.
     </strong>
     </p>
   </div>
