@@ -13,8 +13,6 @@ public class AppController {
     @Autowired
     SongsService songsService;
 
-    //localhost:8080/songs?artistName=
-
     @RequestMapping(path="/songs", method= RequestMethod.GET)
     public List<Song> getHitSongs(@RequestParam String artistName) {
         return songsService.getHitSongs(artistName);

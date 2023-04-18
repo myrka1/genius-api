@@ -71,6 +71,8 @@
   margin-left: 10px;
   margin-right: 10px;
   border-radius: 5px;
+  margin-bottom: 100px;
+
 }
 
 button {
@@ -91,7 +93,7 @@ button {
   margin: 5px;
 }
 .song {
-  width: calc(25% - 10px);
+  width: calc(20% - 10px);
   padding: 2px;
   display: flex;
   flex-direction: column;

@@ -24,7 +24,6 @@ public class SongsService {
     private RestTemplate restTemplate = new RestTemplate();
 
     public List<Song> getHitSongs(String artist_name) {
-        System.out.println("Artist name input: " + artist_name);
 
         ArrayList<Song> songList = new ArrayList<Song>();
 
@@ -33,7 +32,7 @@ public class SongsService {
         HttpEntity<String> request = new HttpEntity<>(httpHeaders);
 
         String url = "https://api.genius.com/search?q=" + artist_name;
-        //example: api.genius.com/search?q=Taylor%20Swift
+
         ResponseEntity<String> response = restTemplate.exchange(
                 url,
                 HttpMethod.GET,
@@ -61,7 +60,6 @@ public class SongsService {
             throw new RuntimeException(e);
         }
 
-        System.out.println(songList);
         return songList;
     }
 }
